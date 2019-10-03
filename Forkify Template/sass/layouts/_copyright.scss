@@ -1,0 +1,13 @@
+.copyright {
+  color: #968b87;
+  font-size: 1.2rem;
+  margin-top: auto;
+  a{
+      text-decoration: none;
+      color: inherit;
+  }
+  @media only screen and (max-width: 50rem) {
+      text-align: center;
+      margin-top: 3rem;
+  }
+}

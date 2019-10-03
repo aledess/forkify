@@ -1,0 +1,20 @@
+$primary: #FBDB89;
+$secondary: #f48982;
+$text-grey: #655A56;
+
+
+
+@import 'layouts/header';
+@import 'layouts/results';
+@import 'layouts/recipe';
+@import 'layouts/shopping';
+@import 'layouts/copyright';
+
+
+@import 'components/components.scss';
+@import 'base';
+
+
+
+
+

@@ -1,0 +1,293 @@
+/////////////////////////////////////////////////////////////
+/////////////////////       SEARCH       ////////////////////
+/////////////////////////////////////////////////////////////
+.search {
+  background-color: #fff;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  transition: all 0.3s;
+  &:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 0.7rem 3rem rgba(101, 90, 86, 0.08);
+  }
+  &__field {
+    border: none;
+    width: 30rem;
+    color: inherit;
+    font-size: 1.7rem;
+    background: none;
+    font-family: inherit;
+
+    @media only screen and (max-width: 32.5rem) {
+      width: 15rem;
+    }
+    &::placeholder {
+      color: #dad0cc;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+/////////////////////////////////////////////////////////////
+/////////////////////     LIKES PANEL    ////////////////////
+/////////////////////////////////////////////////////////////
+.likes__panel {
+  position: absolute;
+  right: 0;
+  top: 10rem;
+  z-index: 10;
+  padding: 2rem 0;
+  width: 34rem;
+  background-color: #fff;
+  box-shadow: 0 0.8rem 5rem 2rem rgba(101, 90, 86, 0.1);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s 0.2s;
+}
+.likes__panel:hover,
+.likes__field:hover + .likes__panel {
+  visibility: visible;
+  opacity: 1;
+}
+/////////////////////////////////////////////////////////////
+/////////////////////        LIST        ////////////////////
+/////////////////////////////////////////////////////////////
+.list {
+  list-style: none;
+  &__link--active {
+    background-color: red;
+  }
+  &__link:link,
+  &__link:visited {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    text-decoration: none;
+    border-right: 1px solid #fff;
+    transition: all 0.3s;
+    &:hover {
+      background-color: #f9f5f3;
+      transform: translateY(-2px);
+    }
+  }
+  &__fig {
+    flex: 0 0 5.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 5.5rem;
+    margin-right: 2rem;
+    position: relative;
+    backface-visibility: hidden;
+    img {
+      height: 5rem;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s;
+    }
+    &::before {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+      opacity: 0.4;
+    }
+  }
+  &__name {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: $secondary;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  &__author {
+    font-size: 1.1rem;
+    color: #968b87;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+/////////////////////////////////////////////////////////////
+/////////////////////       BUTTONS      ////////////////////
+/////////////////////////////////////////////////////////////
+.btn,
+.btn-small,
+.btn-small:link,
+.btn-small:visited {
+  background-image: linear-gradient(to right bottom, $primary, $secondary);
+  border-radius: 10rem;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.btn {
+  padding: 1.3rem 3rem;
+  font-size: 1.4rem;
+  @media only screen and (max-width: 50rem) {
+    padding: 1.2rem 1rem;
+    font-size: 1.3rem;
+  }
+  @media only screen and (max-width: 32.5rem) {
+    width: 10rem;
+  }
+  i {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill: currentColor;
+  }
+}
+
+.btn-small,
+.btn-small:link,
+.btn-small:visited {
+  font-size: 1.3rem;
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  i {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.btn-inline {
+  color: $secondary;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10rem;
+  padding: 0.3rem 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: #f9f5f3;
+  transition: all 0.2s;
+  @media only screen and (max-width: 32.5rem) {
+    padding: 0.3rem 0.5rem;
+  }
+
+  i {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+}
+
+.btn-tiny {
+  font-size: 1.75rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  i {
+    transition: all 0.3s;
+    color: $primary;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover i {
+    color: $secondary;
+    transform: translateY(-1px);
+  }
+  &:active i {
+    color: $secondary;
+  }
+  &:not(:last-child) {
+    margin-right: 0.3rem;
+  }
+}
+
+/////////////////////////////////////////////////////////////
+////////////      RECIPE FIGURE WITH TITLE      /////////////
+/////////////////////////////////////////////////////////////
+.recipe__fig {
+  height: 30rem;
+  position: relative;
+  transform: scale(1.04) translateY(-1px);
+  transform-origin: top;
+  &::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+    opacity: 0.6;
+  }
+}
+.recipe__img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  height: 100%;
+}
+.recipe__title {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) skewY(-6deg);
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2.75rem;
+  width: 70%;
+  line-height: 1.95;
+  text-align: center;
+  @media only screen and (max-width: 32.5rem) {
+    font-size: 2rem;
+  }
+  span {
+    background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+    padding: 1.3rem 2rem;
+    @media only screen and (max-width: 32.5rem) {
+      padding: 1rem 1rem;
+    }
+
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+}
+
+.heading-2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: $secondary;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  transform: skewY(-3deg);
+}
+///LOADER SPINNER
+.loader {
+  margin: 5rem auto;
+  text-align: center;
+  animation-name: spin;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.loader i {
+  font-size: 5.5rem;
+  color: #f59a83;
+}
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}

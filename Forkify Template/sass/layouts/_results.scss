@@ -1,0 +1,16 @@
+.results {
+  padding: 3rem 0;
+
+  &__pages {
+    padding: 0 3rem;
+    margin-top: 3rem;
+    justify-content: space-around;
+    display: flex;
+  }
+
+  .results__fig{
+    @media only screen and (max-width: 32.5rem) {
+     margin-right: 1rem;
+    }
+  }
+}
